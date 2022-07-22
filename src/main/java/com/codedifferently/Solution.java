@@ -1,5 +1,10 @@
 package com.codedifferently;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Solution {
     /**
      * You will be given an integer called number and an array called possibleFamilyMembers
@@ -18,6 +23,14 @@ public class Solution {
      * @return
      */
     public Integer[] numberFamily(Integer number, Integer[] possibleFamilyMembers){
-        return null;
+        ArrayList<Integer> newFamily = new ArrayList<>();
+        for(int i = 0; i < possibleFamilyMembers.length; i++){
+            newFamily.add(possibleFamilyMembers[i]);
+        }
+        Collections.sort(newFamily);
+        int index = newFamily.indexOf(number);
+        Integer[] newFamilyArr = new Integer[newFamily.size()];
+        newFamilyArr = newFamily.toArray(newFamilyArr);
+        return newFamilyArr;
     }
 }
